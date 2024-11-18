@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="E2E Test">
+    <test name="Smoke Test">
+        <classes>
+            <class name="com.anhtester.testcases.LoginTest">
+                <methods>
+                    <include name="loginSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

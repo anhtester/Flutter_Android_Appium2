@@ -1,0 +1,23 @@
+package com.anhtester.drivers;
+
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.WebElement;
+
+public class DriverManager {
+    private static ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
+
+    public static void setDriver(AppiumDriver driverInstance) {
+        driver.set(driverInstance);
+    }
+
+    public static AppiumDriver getDriver() {
+        return driver.get();
+    }
+
+    public static void quitDriver() {
+        if (driver.get() != null) {
+            getDriver().quit();
+            driver.remove();
+        }
+    }
+}

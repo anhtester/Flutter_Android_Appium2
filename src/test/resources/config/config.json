@@ -1,0 +1,34 @@
+{
+   "platforms": {
+      "android": {
+         "devices": {
+            "pixel7": {
+               "platformName": "Android",
+               "platformVersion": "14",
+               "automationName": "UiAutomator2",
+               "deviceName": "Pixel 7 Pro API 34",
+               "appPackage": "com.visualdx.aysa",
+               "appActivity": "com.visualdx.aysa.SplashScreenActivity",
+               "appAndroidPath": "",
+               "noReset": false,
+               "fullReset": false,
+               "autoGrantPermissions": true
+            },
+            "pixel8": {
+               "platformName": "Android",
+               "platformVersion": "15",
+               "automationName": "UiAutomator2",
+               "deviceName": "Pixel 8 Pro API 35",
+               "appPackage": "com.anhtester.mobile_app.taurus",
+               "appActivity": "com.anhtester.mobile_app.taurus.MainActivity",
+               "appAndroidPath": "",
+               "noReset": false,
+               "fullReset": false,
+               "autoGrantPermissions": true
+            }
+         }
+      },
+      "ios": {
+      }
+   }
+}
