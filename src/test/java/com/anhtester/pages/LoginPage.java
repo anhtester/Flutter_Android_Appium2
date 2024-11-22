@@ -24,6 +24,14 @@ public class LoginPage extends BasePage {
     @iOSXCUITFindBy(accessibility = "Sign in")
     public WebElement buttonSignin;
 
+//    @AndroidFindBy(accessibility = "")
+//    @iOSXCUITFindBy(accessibility = "")
+//    public WebElement inputEmail;
+//
+//    @AndroidFindBy(accessibility = "")
+//    @iOSXCUITFindBy(accessibility = "")
+//    public WebElement inputPassword;
+
     public LoginPage() {
         PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver()), this);
     }

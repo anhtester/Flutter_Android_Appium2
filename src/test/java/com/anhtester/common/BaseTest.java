@@ -8,6 +8,7 @@ import com.anhtester.pages.BasePage;
 import com.anhtester.utils.LogUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.flutter.android.FlutterAndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
@@ -37,10 +38,12 @@ public class BaseTest {
             AppiumServiceBuilder builder = new AppiumServiceBuilder();
             builder.withIPAddress(ConfigData.IP_ADDRESS);
             builder.usingPort(Integer.parseInt(ConfigData.PORT));
-            builder.withArgument(() -> "--use-plugins", "element-wait,gestures,device-farm,appium-dashboard")
+            builder.withArgument(() -> "--use-plugins", "appium-reporter-plugin,execute-driver,element-wait,gestures,device-farm,appium-dashboard")
                     .withArgument(() -> "-ka", "800")   // Set keep-alive timeout
                     .withArgument(() -> "-pa", "/")     // Set the path
-                    .withArgument(() -> "--plugin-device-farm-platform", "android");
+                    .withArgument(() -> "--plugin-device-farm-platform", "android")
+                    .withArgument(() -> "--plugin-element-wait-timeout", "10000")
+                    .withArgument(() -> "--plugin-element-wait-interval-between-attempts", "200");
 
             builder.withArgument(GeneralServerFlag.LOG_LEVEL, "info"); // Set log level (optional)
             builder.withTimeout(Duration.ofSeconds(Integer.parseInt(ConfigData.TIMEOUT_SERVICE)));

@@ -15,7 +15,7 @@ public class ScrollTest extends BaseTest {
     @Test
     public void testScrollOnFlutterApp() {
         new LoginPage().login();
-        new ConfigPage().importData("Data 1");
+        //new ConfigPage().importData("Data 3");
 
         //MobileUI.scroll(776, 1659, 776, 992);
 
