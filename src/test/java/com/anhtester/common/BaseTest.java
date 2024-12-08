@@ -8,11 +8,13 @@ import com.anhtester.pages.BasePage;
 import com.anhtester.utils.LogUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.flutter.FlutterDriverOptions;
 import io.appium.java_client.flutter.android.FlutterAndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import io.github.ashwith.flutter.FlutterFinder;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -64,9 +66,10 @@ public class BaseTest {
     @BeforeTest
     public void setUpDriver() {
         AppiumDriver driver;
-        UiAutomator2Options option;
+        //UiAutomator2Options option;
+        FlutterDriverOptions option;
 
-        option = new UiAutomator2Options();
+        option = new FlutterDriverOptions();
 
         System.out.println("***SERVER ADDRESS: " + ConfigData.IP_ADDRESS);
         System.out.println("***SERVER POST: " + Integer.parseInt(ConfigData.PORT));
@@ -74,12 +77,18 @@ public class BaseTest {
         option.setPlatformName(ConfigData.getValueJsonConfig("platformName"));
         option.setPlatformVersion(ConfigData.getValueJsonConfig("platformVersion"));
         option.setAutomationName(ConfigData.getValueJsonConfig("automationName"));
-        option.setDeviceName(ConfigData.getValueJsonConfig("deviceName"));
-        option.setAppPackage(ConfigData.getValueJsonConfig("appPackage"));
-        option.setAppActivity(ConfigData.getValueJsonConfig("appActivity"));
+        //option.setDeviceName(ConfigData.getValueJsonConfig("deviceName"));
+        //option.setAppPackage(ConfigData.getValueJsonConfig("appPackage"));
+        //option.setAppActivity(ConfigData.getValueJsonConfig("appActivity"));
         option.setNoReset(Boolean.parseBoolean(ConfigData.getValueJsonConfig("noReset")));
         option.setFullReset(Boolean.parseBoolean(ConfigData.getValueJsonConfig("fullReset")));
-        option.setAutoGrantPermissions(Boolean.parseBoolean(ConfigData.getValueJsonConfig("autoGrantPermissions")));
+        //option.setAutoGrantPermissions(Boolean.parseBoolean(ConfigData.getValueJsonConfig("autoGrantPermissions")));
+        option.setCapability("forceAppLaunch", true);
+
+        option.setCapability("deviceName", ConfigData.getValueJsonConfig("deviceName"));
+        option.setCapability("appPackage", ConfigData.getValueJsonConfig("appPackage"));
+        option.setCapability("appActivity", ConfigData.getValueJsonConfig("appActivity"));
+        //option.setCapability("autoGrantPermissions", Boolean.parseBoolean(ConfigData.getValueJsonConfig("autoGrantPermissions")));
 
 
         try {

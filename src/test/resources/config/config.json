@@ -17,7 +17,7 @@
             "pixel8": {
                "platformName": "Android",
                "platformVersion": "15",
-               "automationName": "UiAutomator2",
+               "automationName": "Flutter",
                "deviceName": "Pixel 8 Pro API 35",
                "appPackage": "com.anhtester.mobile_app.taurus",
                "appActivity": "com.anhtester.mobile_app.taurus.MainActivity",
