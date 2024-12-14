@@ -97,13 +97,13 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.18.1</version>
+            <version>2.18.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.18.1</version>
+            <version>2.18.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
@@ -125,13 +125,13 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.29.0</version>
+            <version>2.29.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-attachments -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-attachments</artifactId>
-            <version>2.29.0</version>
+            <version>2.29.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.github.automatedowl/allure-environment-writer -->
         <dependency>
